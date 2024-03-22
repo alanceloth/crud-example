@@ -98,7 +98,7 @@ def update_product_route(
     Raises:
         HTTPException: If the product is not found.
     """
-    db_product = update_product(db, product_id=product_id)
+    db_product = update_product(db, product_id=product_id, product=product)
     if db_product is None:
         raise HTTPException(status_code=404, detail="Product not found")
     return db_product
